@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:my_shop/layout/news_app/cubit/cubit.dart';
 import 'package:my_shop/layout/shop_app/cubit/cubit.dart';
 import 'package:my_shop/layout/shop_app/shop_layout.dart';
+import 'package:my_shop/modules/bmi/bmi_screen.dart';
+import 'package:my_shop/modules/messenger/messenger_screen.dart';
 import 'package:my_shop/modules/shop_app/login/shop_login_screen.dart';
 import 'package:my_shop/shared/bloc_observer.dart';
 import 'package:my_shop/shared/components/constants.dart';
@@ -11,6 +13,8 @@ import 'package:my_shop/shared/cubit/states.dart';
 import 'package:my_shop/shared/network/local/cache_helper.dart';
 import 'package:my_shop/shared/network/remote/dio_helper.dart';
 import 'package:my_shop/shared/styles/themes.dart';
+import 'layout/news_app/news_layout.dart';
+import 'layout/todo_app/todo_layout.dart';
 import 'modules/shop_app/on_boarding/on_boarding_screen.dart';
 
 void main() async {
@@ -67,12 +71,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        // BlocProvider(
-        //   create: (context) => NewsCubit()
-        //     ..getBusiness()
-        //     ..getSports()
-        //     ..getScience(),
-        // ),
+        BlocProvider(
+          create: (context) => NewsCubit()
+            ..getBusiness()
+            ..getSports()
+            ..getScience(),
+        ),
         BlocProvider(
           create: (BuildContext context) => AppCubit()
             ..changeAppMode(
@@ -96,7 +100,7 @@ class MyApp extends StatelessWidget {
             darkTheme: darkTheme,
             themeMode:
                 AppCubit.get(context).isDark ? ThemeMode.light : ThemeMode.dark,
-            home: OnBoardingScreen(),
+            home: startWidget,
           );
         },
       ),

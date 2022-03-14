@@ -1,11 +1,15 @@
 buildscript {
     ext.kotlin_version = '1.6.10'
     repositories {
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
         google()
         mavenCentral()
     }
 
     dependencies {
+        classpath 'com.google.gms:google-services:4.3.10'
         classpath 'com.android.tools.build:gradle:4.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
@@ -13,6 +17,9 @@ buildscript {
 
 allprojects {
     repositories {
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
         google()
         mavenCentral()
     }
@@ -27,3 +34,4 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+

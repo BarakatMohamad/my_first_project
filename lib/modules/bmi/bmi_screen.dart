@@ -42,7 +42,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image(
-                              image: AssetImage('assets/images/male.png'),
+                              image: AssetImage('assets/images/facebook.png'),
                               height: 90.0,
                               width: 90.0,
                             ),
@@ -82,7 +82,7 @@ class _BmiScreenState extends State<BmiScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
                             Image(
-                              image: AssetImage('assets/images/female.png'),
+                              image: AssetImage('assets/images/onboard_1.jpg'),
                               height: 90.0,
                               width: 90.0,
                             ),

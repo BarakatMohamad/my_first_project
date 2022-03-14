@@ -38,7 +38,7 @@ class NewsLayout extends StatelessWidget {
                   Icons.brightness_4_outlined,
                 ),
                 onPressed: () {
-                  AppCubit.get(context).changeAppMode(fromShared: true);
+                  AppCubit.get(context).changeAppMode(fromShared: false);
                 },
               ),
             ],
